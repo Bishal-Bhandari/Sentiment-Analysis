@@ -1,6 +1,10 @@
 import speech_recognition as sr
+from pydub import AudioSegment
 
-filename = "Resources/Myname.m4a"
+filename = "Resources/Myname.wav"
+
+# convert file format
+# wav_fileformat = r"Resources\file1.wav"
 
 # Recognition process
 recognition = sr.Recognizer()
