@@ -3,18 +3,18 @@ import speech_recognition as sr
 
 def audioTOtext():
     # Access file
-    src = "Resources/Recording.wav"
+    src_file = "Resources/Recording.wav"
 
     # Recognition process
     recognition = sr.Recognizer()
 
     # Access file
-    with sr.AudioFile(src) as source:
+    with sr.AudioFile(src_file) as source:
         # Audio to memory
-        audio_data = recognition.record(source)
+        src_file_data = recognition.record(source)
         # Audio to text
-        text = recognition.recognize_google(audio_data)
-        print(text)
+        audio_to_text = recognition.recognize_google(src_file_data)
+        print(audio_to_text)
 
 
 audioTOtext()
