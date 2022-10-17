@@ -4,7 +4,6 @@ import LiveInput
 # Recognition process
 recognition = sr.Recognizer()
 
-
 def audioTotext():
     # Access file
     src_file = "Resources/Recording.wav"
@@ -26,8 +25,9 @@ def LiveVoice():
     print(audio_to_text)
 
 
-print("WELCOME")
-user_val = int(input("Please select an input.\n Press 1 for audio file.\n Press 2 for live voice input."))
+print('\x1b[6;30;42m' + 'WELCOME' + '\x1b[0m')
+user_val = int(input('\x1b[1;31;40m' + "Please select an input.\n Press 1 for audio file.\n Press 2 for live voice "
+                                       "input.   " + '\x1b[0m'))
 if user_val == 1:
     audioTotext()
 elif user_val == 2:
