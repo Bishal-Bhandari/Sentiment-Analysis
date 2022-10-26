@@ -1,8 +1,12 @@
 import speech_recognition as sr
 import LiveInput
+import BERT
 
 # Recognition process
 recognition = sr.Recognizer()
+# using BERT model
+bertObj = BERT.BertAnalysis
+
 
 def audioTotext():
     # Access file
@@ -13,7 +17,8 @@ def audioTotext():
         src_file_data = recognition.record(source)
         # Audio to text
         audio_to_text = recognition.recognize_google(src_file_data)
-        print(audio_to_text)
+        score_bert = bertObj.bert_analysis(audio_to_text)
+        print(audio_to_text + '\n Analysied score:' + score_bert)
 
 
 def LiveVoice():
@@ -22,7 +27,8 @@ def LiveVoice():
     live_audio_data = LiveObj.TakeAudio()
     # feeding data to recognition process
     audio_to_text = recognition.recognize_google(live_audio_data)
-    print(audio_to_text)
+    score_bert = bertObj.bert_analysis(audio_to_text)
+    print(audio_to_text + '\n Analysied score:' + score_bert)
 
 
 print('\x1b[6;30;42m' + 'WELCOME' + '\x1b[0m')
