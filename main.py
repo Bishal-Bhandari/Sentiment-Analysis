@@ -26,7 +26,7 @@ def audioTotext():
         File_Work(audio_to_text, score_bert)
 
         # final output
-        print(audio_to_text + '\n Analysied score:' + score_bert)
+        print('Text:' + audio_to_text + '\n Analysied score:' + score_bert)
 
 
 def LiveVoice():
@@ -43,7 +43,7 @@ def LiveVoice():
     File_Work(audio_to_text, score_bert)
 
     # final output
-    print(audio_to_text + '\n Analysied score:' + score_bert)
+    print('Text:' + audio_to_text + '\n Analysied score:' + score_bert)
 
 
 def File_Work(audioData, audioScore):
