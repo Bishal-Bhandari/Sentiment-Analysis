@@ -1,7 +1,5 @@
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
-import pandas as pd
-import re
 
 
 class BertAnalysis:
@@ -14,4 +12,6 @@ class BertAnalysis:
         tokens = tokenizer.encode(self, return_tensors='pt')
         result = model(tokens)
         final_result = int(torch.argmax(result.logits))+1
+
         return str(final_result)
+
